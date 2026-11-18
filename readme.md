@@ -15,5 +15,9 @@ string matematico esté en el texto. para garantizarse de que funciona (prueba q
 
 return next_agent: destino
 
+AAAA
+
+BBBBB
+
 
 
