@@ -1,0 +1,3 @@
+La inteligencia artificial está transformando el desarrollo de software.
+Los modelos de lenguaje pueden analizar documentos, resumir información y ayudar a programar.
+Las empresas investigan cómo integrar estas herramientas en sus procesos de trabajo.
