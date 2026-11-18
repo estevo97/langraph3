@@ -34,13 +34,28 @@ def calculator(expression: str) -> str:
 
 # EL ESTADO Y EL MODELO
 
+print("Selecciona el proveedor del modelo:")
+print("1. Gemini")
+print("2. Ollama")
+
+opcion = input("Opción: ").strip()
+
+if opcion == "1":
+    proveedor = "gemini"
+elif opcion == "2":
+    proveedor = "ollama"
+else:
+    raise ValueError("Opción no válida")
+
+llm = crear_llm(proveedor=proveedor)
+
 class AgentState(TypedDict):
     messages: Annotated[list, add_messages]
     next_agent: str 
 
 #llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0)
 llm = crear_llm(
-    proveedor="gemini"
+    proveedor=proveedor
 )
 
 

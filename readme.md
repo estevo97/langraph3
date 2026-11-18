@@ -137,7 +137,58 @@ Las categorías disponibles son:
 
 Este mecanismo permite automatizar la organización documental sin necesidad de que el usuario clasifique manualmente cada archivo.
 
+### 2.4. Ejemplo práctico: guardar y clasificar un documento
+
+El siguiente ejemplo muestra el recorrido de un texto desde su creación hasta su clasificación:
+
+1. Se guarda `prueba.txt` con el contenido `economia mundial`. El documento queda en recepción, pendiente de clasificación.
+
+   ![Guardado de prueba.txt con el texto «economia mundial»](img/21.png)
+
+2. Se solicita clasificar los documentos pendientes. El agente analiza `prueba.txt` y lo mueve a la categoría `economia`.
+
+   ![Clasificación y movimiento de prueba.txt a la categoría economia](img/22.png)
+
+3. Se consulta el contenido de la categoría `economia` para verificar que el documento ya está allí.
+
+   ![Listado de documentos de la categoría economia tras la clasificación](img/23.png)
+
+
+### 2.5. Ejemplo práctico: Elegir el tipo de modelo y copiar un archivo de downloads a recepción.
+
+Se busca en la carpeta `downloads` el archivo .txt que demanda la petición que hacemos en el input. Se encuentra el archivo y se guarda en recepción. El server nos permite la opción de aplicar más procesos (clasificación, etc) o de salir. Elegimos la opción de salir.
+
+   ![Elección del modelo Gemini y petición de la copia de un .txt de downloads a la carpeta recepción](img/24_elegir.png)
+
 ---
+
+### 2.6 Creación de la carpeta educación mediante el movimiento de un .txt
+
+Queremos comprobar que, cuando una categoría no tiene carpeta (ni ningún archivo), puede crearse al traer un .txt que pertenece a dicha caragoría. en este caso, borramos la carpeta `educación` con todo lo que tiene dentro y creamos en descargas un .txt sobre la educación. Dicho .xt sufrirá los siguientes procesos:
+
+- Importación de descargas a `_recepcion`.
+- Lectura y clasificación en la categoría `educacion`. 
+- Creación de la carpeta "Educación" por no existir y movimiento del .txt a dicha carpeta.
+
+Veámoslo con imágenes:
+
+Nos cercioramos de borrar la carpeta "Educación": 
+
+   ![borrado educacion](img/educ_borrada.png)
+
+Creamos en descargas el .txt con el siguiente texto: 
+
+"La educación digital y el aprendizaje en línea están transformando los métodos de enseñanza en las universidades."
+
+   ![borrado educacion](img/educ_descarg.png)
+
+Corremos el agente dándole las siguientes instrucciones:
+
+1. Que elija Gemini
+2. Que copie el prueba_educacion.txt a recepción
+3. Que lea los archivos de recepción (que en este momento sólo tenemos prueba_educación.txt) y los clasifique. El propio proceso de clasificación ya incluye la creación de la carpeta "Educación" y el movimiento de educacion.txt a dicha carpeta.
+
+![borrado educacion](img/educ_proceso_completo.png)
 
 ## 3. Estructura del repositorio
 
